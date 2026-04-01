@@ -12,9 +12,29 @@ The core analysis is implemented in a Jupyter Notebook and covers:
 ## Project Files
 
 - `PL_data.ipynb`: Main notebook with data processing, visual analysis, and forecasting logic.
+- `main.py`: Script entry point that runs the full analysis pipeline.
+- `src/mu_analysis/`: Reusable Python package for data processing, analysis, plotting, and forecasting.
 - `england.csv`: Historical English football match dataset used as the data source.
 - `MU_data_analysis.html`: Exported HTML version of the notebook for quick viewing.
 - `README.md`: Project documentation.
+
+## Project Structure
+
+```text
+MU_data_analysis/
+├── england.csv
+├── main.py
+├── PL_data.ipynb
+├── MU_data_analysis.html
+├── README.md
+└── src/
+	└── mu_analysis/
+		├── __init__.py
+		├── data_processing.py
+		├── analysis.py
+		├── forecasting.py
+		└── visualization.py
+```
 
 ## Data Source
 
@@ -45,6 +65,20 @@ pip install pandas numpy matplotlib jupyter
 ```
 
 ## How to Run
+
+### Option 1: Run the modular Python script
+
+```bash
+python main.py
+```
+
+This command will:
+- Load and clean raw match data.
+- Build Manchester United match-level features.
+- Generate season-level metrics and win-rate forecast.
+- Render all visualizations.
+
+### Option 2: Run the notebook
 
 1. Open the project folder in VS Code or Jupyter.
 2. Launch `PL_data.ipynb`.
